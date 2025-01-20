@@ -143,15 +143,16 @@ class LinkedList{
         // Keeping track of the current node, starting with the head
         let current = this.head;
         // Keeping track of the previous node, starting with null
-        let previous = new Node();
         let position = index;
 
         if (position === 0){
             this.head = current.nextNode;
         }
 
+        let previous = current;
+
         // While there are nodes and we haven't found the node we are looking for, we keep iterating through the list
-        while(current && position > 1){
+        while(current && position >= 1){
             // Substract one position from the index we are looking for
             position -= 1;
             previous = current;

@@ -1,9 +1,18 @@
+/**
+ * 
+ * @param {*} array 
+ * @param {*} target 
+ * @param {*} start define the start of the array to get the half while mantaining the original's index
+ * @param {*} end define the end of the array to get the half while mantaining the original's index
+ * @returns 
+ */
 const binarySearch = (array, target, start = 0, end = array.length -1 ) => {
     // The target does not exist in the array
     if(start > end){
         return -1
     }
 
+    // Use the start and end to get the half, very important when doing recursion
     const mid = Math.floor((start + end) / 2)
 
     if (array[mid] === target){

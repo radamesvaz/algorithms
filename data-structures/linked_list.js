@@ -1,4 +1,4 @@
-class Node {
+export class Node {
     // An object for storing a single node of a linked list
     // Models two pieces of data: the data stored in the node, and a reference to the next node in the list
 
@@ -18,11 +18,11 @@ class Node {
 
 // Example usage:
 
-const node1 = new Node(15); // Create a new node with data 15
+// const node1 = new Node(15); // Create a new node with data 15
 
-console.log(node1.toString()); // Output: Node Data: 15
+// console.log(node1.toString()); // Output: Node Data: 15
 
-class LinkedList{
+export class LinkedList{
     // Singly linked list
     constructor(data){
         this.head = null;
@@ -138,6 +138,20 @@ class LinkedList{
         return current;
     }
 
+    nodeAtIndex(index){
+        // Keep track of the current node, starting with the head
+        let current = this.head;
+        let position = index;
+
+        while(position > 0){
+            current = current.nextNode
+            position -= 1;
+        }
+
+        return current
+
+    }
+
     //
     removeAtIndex(index){
         // Keeping track of the current node, starting with the head
@@ -169,26 +183,26 @@ class LinkedList{
 // Example usage:
  
 // Empty list
-const listEmpty = new LinkedList()
-const size = listEmpty.size()
-const isEmpty = listEmpty.isEmpty()
-console.log(size)
-console.log(isEmpty)
-console.log(listEmpty.search(2))
+// const listEmpty = new LinkedList()
+// const size = listEmpty.size()
+// const isEmpty = listEmpty.isEmpty()
+// console.log(size)
+// console.log(isEmpty)
+// console.log(listEmpty.search(2))
 
-// List with nodes
-const list = new LinkedList()
-list.add(1)
-list.add(2)
-list.add(3)
-list.add(4)
-list.add(5)
-console.log(list.insert(80, 0))
-console.log(list.isEmpty())
-console.log(list.search(80))
-// console.log(list.remove(80));
-console.log(list.removeAtIndex(1));
+// // List with nodes
+// const list = new LinkedList()
+// list.add(1)
+// list.add(2)
+// list.add(3)
+// list.add(4)
+// list.add(5)
+// console.log(list.insert(80, 0))
+// console.log(list.isEmpty())
+// console.log(list.search(80))
+// // console.log(list.remove(80));
+// console.log(list.removeAtIndex(1));
 
-// console.log(list.remove(2))
-console.log(list)
-console.log(list.size())
+// // console.log(list.remove(2))
+// console.log(list)
+// console.log(list.size())

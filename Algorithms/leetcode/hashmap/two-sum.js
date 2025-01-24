@@ -7,22 +7,20 @@
  */
 const twoSum = (nums, target) => {
 
-    // Create an object to store numbers and their corresponding indices
-    let numToIndexMap = {}
+    let numToIndexMap = {};
 
-    // Loop through the array
-    for(i = 0; i <= nums.length; i++){
-        // Calculate the difference between the target and the current number
+    for(let i = 0; i < nums.length; i++){
         let difference = target - nums[i]
 
-        // Check if the difference exists in the map
-        if(numToIndexMap.hasOwnPropery(difference)){
-            return [i, numToIndexMap[difference]]
+        if(difference in numToIndexMap){
+            return [numToIndexMap[difference], i]
         }
-
-        numToIndexMap[nums[i]] = i;
+        numToIndexMap[nums[i]] = i
     }
-
-    return null
+    return []
 
 }
+
+
+const testArray = [2,7,11,15]
+console.log(twoSum(testArray, 13))

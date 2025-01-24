@@ -178,6 +178,23 @@ export class LinkedList{
 
         return current;
     }
+
+    getList(){
+        let nodes = []
+        let current = this.head
+
+        while(current){
+            if(current === this.head){
+                nodes.push(`[Head: ${current.data}]`)
+            } else if (current.nextNode === null){
+                nodes.push(`[Tail: ${current.data}]`)
+            } else {
+                nodes.push(`[${current.data}]`)
+            }
+            current = current.nextNode
+        }
+        return nodes.join("->")
+    }
 }
 
 // Example usage:
